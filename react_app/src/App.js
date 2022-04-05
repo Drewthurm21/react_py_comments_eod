@@ -52,6 +52,21 @@ function App() {
       justifyContent: 'center',
       flexDirection: 'column'
     }}>
+      <h1>Article</h1>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        width: '50%',
+        margin: '0 auto'
+      }}>
+        <div> Let's pretend this is an article about something we care deeply about.</div>
+        <br></br>
+        <div> It's a really good article...  I promise!</div>
+        <br></br>
+        <div> Let's all share our thoughts in the comments section.  =]</div>
+      </div>
+      <h1>Comments</h1>
       <form onSubmit={submitComment}>
         <label htmlFor='comment'>Add a comment</label>
         <input type='textarea' onChange={(e) => setCommentText(e.target.value)} value={commentText}></input>
@@ -68,7 +83,6 @@ function App() {
           {Object.keys(comments)?.map(id => {
             let comment = comments[id]
             return (
-
               <div key={comment.id} className='single-comment'>
                 <div>{comment.user_name}</div>
                 <div>{comment.id}</div>
