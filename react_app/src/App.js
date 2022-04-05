@@ -3,23 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getCommentsThunk, deleteCommentThunk, createCommentThunk } from './store/comments.js'
 import './App.css';
 
-const h1Style = {
-  position: 'sticky',
-  top: '0',
-  backgroundColor: '#f5f5f5',
-  padding: '10px',
-  margin: '0',
-  fontSize: '2em',
-  fontWeight: 'bold',
-  textAlign: 'center',
-  color: 'rgb(255, 0, 179)',
-  textShadow: `10px 10px 1px rgb(0, 255, 34),
-  -10px -12px 1px rgb(0, 255, 34),
-  -20px -22px 1px black, 
-  -30px -30px 1px rgb(255, 238, 0, 0.3)`,
-}
-
-
 
 function App() {
   const dispatch = useDispatch()
@@ -52,7 +35,17 @@ function App() {
       justifyContent: 'center',
       flexDirection: 'column'
     }}>
-      <h1>Article</h1>
+      <h1 style={{
+        position: 'sticky',
+        top: '0',
+        backgroundColor: '#f5f5f5',
+        padding: '10px',
+        margin: '0',
+        fontSize: '2em',
+        fontWeight: 'bold',
+        textAlign: 'center',
+        border: '1px solid #ccc'
+      }}>Article</h1>
       <div style={{
         display: 'flex',
         justifyContent: 'center',
@@ -72,14 +65,27 @@ function App() {
         <input type='textarea' onChange={(e) => setCommentText(e.target.value)} value={commentText}></input>
         <button>Add Comment</button>
       </form>
-      <h1>Comments</h1>
       <br></br>
       <div style={{
         display: 'flex',
         justifyContent: 'center',
         flexDirection: 'column'
       }}>
-        <h1 style={h1Style}>COMMENTS</h1>
+        <h1 style={{
+          position: 'sticky',
+          top: '0',
+          backgroundColor: '#f5f5f5',
+          padding: '10px',
+          margin: '0',
+          fontSize: '2em',
+          fontWeight: 'bold',
+          textAlign: 'center',
+          color: 'rgb(255, 0, 179)',
+          textShadow: `10px 10px 1px rgb(0, 255, 34),
+                      -10px -12px 1px rgb(0, 255, 34),
+                      -20px -22px 1px black, 
+                      -30px -30px 1px rgb(255, 238, 0, 0.3)`,
+        }}>COMMENTS</h1>
         <div className="App">
           {Object.keys(comments)?.map(id => {
             let comment = comments[id]
