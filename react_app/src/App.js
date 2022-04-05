@@ -57,11 +57,11 @@ function App() {
         <br></br>
         <div> It's a really good article...  I promise!</div>
         <br></br>
-        <div> Let's all share our thoughts in the comments section.  =]</div>
+        <div> {`Let's all share our thoughts in the comments section.  =]`}</div>
       </div>
       <h3>Add your comment</h3>
       <form onSubmit={submitComment} >
-        <label htmlFor='comment'>Add a comment here -------> > </label>
+        <label htmlFor='comment'>{`Add a comment here -------> > `}</label>
         <input type='textarea' onChange={(e) => setCommentText(e.target.value)} value={commentText}></input>
         <button>Add Comment</button>
       </form>
@@ -102,7 +102,7 @@ function App() {
                 <div>{comment.body}</div>
               </div>
             )
-          })}
+          }).reverse()}
         </div>
       </div>
     </div>
