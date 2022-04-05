@@ -66,12 +66,14 @@ function App() {
         <br></br>
         <div> Let's all share our thoughts in the comments section.  =]</div>
       </div>
-      <h1>Comments</h1>
-      <form onSubmit={submitComment}>
-        <label htmlFor='comment'>Add a comment</label>
+      <h3>Add your comment</h3>
+      <form onSubmit={submitComment} >
+        <label htmlFor='comment'>Add a comment here -------> > </label>
         <input type='textarea' onChange={(e) => setCommentText(e.target.value)} value={commentText}></input>
         <button>Add Comment</button>
       </form>
+      <h1>Comments</h1>
+      <br></br>
       <div style={{
         display: 'flex',
         justifyContent: 'center',
@@ -79,7 +81,6 @@ function App() {
       }}>
         <h1 style={h1Style}>COMMENTS</h1>
         <div className="App">
-
           {Object.keys(comments)?.map(id => {
             let comment = comments[id]
             return (
