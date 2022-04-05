@@ -49,9 +49,7 @@ function App() {
       <div style={{
         display: 'flex',
         justifyContent: 'center',
-        flexDirection: 'column',
-        width: '50%',
-        margin: '0 auto'
+        flexDirection: 'column'
       }}>
         <div> Let's pretend this is an article about something we care deeply about.</div>
         <br></br>
