@@ -30,27 +30,9 @@ function App() {
 
 
   return (
-    <div style={{
-      display: 'flex',
-      justifyContent: 'center',
-      flexDirection: 'column'
-    }}>
-      <h1 style={{
-        position: 'sticky',
-        top: '0',
-        backgroundColor: '#f5f5f5',
-        padding: '10px',
-        margin: '0',
-        fontSize: '2em',
-        fontWeight: 'bold',
-        textAlign: 'center',
-        border: '1px solid #ccc'
-      }}>Article</h1>
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'column'
-      }}>
+    <div style={centeredContainerStyle}>
+      <h1 style={articleH1Style}>Article</h1>
+      <div style={centeredContainerStyle}>
         <div> Let's pretend this is an article about something we care deeply about.</div>
         <br></br>
         <div> It's a really good article...  I promise!</div>
@@ -64,26 +46,8 @@ function App() {
         <button>Add Comment</button>
       </form>
       <br></br>
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'column'
-      }}>
-        <h1 style={{
-          position: 'sticky',
-          top: '0',
-          backgroundColor: '#f5f5f5',
-          padding: '10px',
-          margin: '0',
-          fontSize: '2em',
-          fontWeight: 'bold',
-          textAlign: 'center',
-          color: 'rgb(255, 0, 179)',
-          textShadow: `10px 10px 1px rgb(0, 255, 34),
-                      -10px -12px 1px rgb(0, 255, 34),
-                      -20px -22px 1px black, 
-                      -30px -30px 1px rgb(255, 238, 0, 0.3)`,
-        }}>COMMENTS</h1>
+      <div style={centeredContainerStyle}>
+        <h1 style={commentsH1Style}>COMMENTS</h1>
         <div className="App">
           {Object.keys(comments)?.map(id => {
             let comment = comments[id]
@@ -108,3 +72,37 @@ function App() {
 }
 
 export default App;
+
+const commentsH1Style = {
+  position: 'sticky',
+  top: '0',
+  backgroundColor: '#f5f5f5',
+  padding: '10px',
+  margin: '0',
+  fontSize: '2em',
+  fontWeight: 'bold',
+  textAlign: 'center',
+  color: 'rgb(255, 0, 179)',
+  textShadow: `10px 10px 1px rgb(0, 255, 34),
+              -10px -12px 1px rgb(0, 255, 34),
+              -20px -22px 1px black, 
+              -30px -30px 1px rgb(255, 238, 0, 0.3)`,
+}
+
+const articleH1Style = {
+  position: 'sticky',
+  top: '0',
+  backgroundColor: '#f5f5f5',
+  padding: '10px',
+  margin: '0',
+  fontSize: '2em',
+  fontWeight: 'bold',
+  textAlign: 'center',
+  border: '1px solid #ccc'
+}
+
+const centeredContainerStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  flexDirection: 'column'
+}
