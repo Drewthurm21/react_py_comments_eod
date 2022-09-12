@@ -56,7 +56,7 @@ def create_comment():
     data = form.data
     form['csrf_token'].data = request.cookies['csrf_token']
     print(f'FORM :{form["csrf_token"]} \n\n\n\n')
-    if form.validate_on_submit():
+    if form.validate_on_submit():   
         comment = Comment(
             user_name=data['user_name'],
             body=data['body']
